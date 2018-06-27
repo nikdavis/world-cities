@@ -101,15 +101,15 @@ sqlite://world-cities.sqlite/cities <- sqlite://world-cities.sqlite/country, sql
     c.execute('''
       CREATE TABLE cities
         (
-          name,
-          country_code,
-          country_name,
-          subcountry_code,
-          subcountry_name,
-          geoname_id,
+          name varchar(75),
+          country_code varchar(2),
+          country_name varchar(75),
+          subcountry_code varchar(10),
+          subcountry_name varchar(75),
+          geoname_id int,
           latitude double precision,
           longitude double precision,
-          alternate_names,
+          alternate_names text,
           population int,
           elevation int,
           CONSTRAINT geoname_id UNIQUE (geoname_id)
